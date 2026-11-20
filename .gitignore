@@ -1,0 +1,47 @@
+
+# Android
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+.gradle/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Native compilation
+build/
+cmake-build-*/
+out/
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.a
+*.lib
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Desktop
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# Emulator data
+userdata/
+virtual-disks/
+snapshots/
+*.qcow2
+*.img
