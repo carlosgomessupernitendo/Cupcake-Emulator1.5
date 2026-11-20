@@ -1,0 +1,47 @@
+
+package br.com.cupcake.emulator.core;
+
+import java.io.File;
+
+public class ImageInfo {
+
+    private final File kernel;
+    private final File ramdisk;
+    private final File system;
+    private final File userdata;
+
+    public ImageInfo(
+            File kernel,
+            File ramdisk,
+            File system,
+            File userdata) {
+
+        this.kernel = kernel;
+        this.ramdisk = ramdisk;
+        this.system = system;
+        this.userdata = userdata;
+    }
+
+    public File getKernel() {
+        return kernel;
+    }
+
+    public File getRamdisk() {
+        return ramdisk;
+    }
+
+    public File getSystem() {
+        return system;
+    }
+
+    public File getUserdata() {
+        return userdata;
+    }
+
+    public long getTotalSize() {
+        return kernel.length()
+                + ramdisk.length()
+                + system.length()
+                + userdata.length();
+    }
+}
