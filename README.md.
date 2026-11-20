@@ -1,0 +1,73 @@
+
+# Cupcake Emulator
+
+An Android 1.5 Cupcake emulator for Android devices and desktop computers.
+
+## About
+
+Cupcake Emulator is an open-source project designed to reproduce
+the original Android 1.5 Cupcake operating system.
+
+The project aims to support:
+
+- Android smartphones and tablets
+- Windows computers
+- Linux computers
+- macOS computers
+- Original Android 1.5 interface
+- APK installation
+- Legacy Android application compatibility
+- ARM emulation
+- Virtual storage
+- Touchscreen, keyboard and mouse input
+- Audio support
+
+## Original operating system
+
+- Name: Android Cupcake
+- Version: 1.5
+- API Level: 3
+- Release year: 2009
+
+## Project architecture
+
+The project is divided into:
+
+- android: Android application
+- desktop: Desktop application
+- emulator: Emulation engine
+- cupcake: Android 1.5 system
+- compatibility: Legacy APK compatibility
+- docs: Project documentation
+
+## Development status
+
+This project is under development.
+
+No complete Android 1.5 emulation or universal APK
+compatibility is claimed yet.
+
+## Platforms
+
+| Platform | Planned support |
+|---|---|
+| Android | Yes |
+| Windows | Yes |
+| Linux | Yes |
+| macOS | Yes |
+
+## Important
+
+The original Android operating system must run inside
+the emulator. The host application is not a replacement
+for the phone's installed Android operating system.
+
+## License
+
+License and third-party notices will be documented
+before distributing builds.
+
+## Contributions
+
+Contributions, bug reports and compatibility tests
+are welcome.
