@@ -1,0 +1,60 @@
+
+name: Cupcake Emulator - Repository Validation
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate project structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        shell: bash
+        run: |
+          set -e
+
+          files=(
+            README.md
+            .gitignore
+            android/README.md
+            desktop/README.md
+            emulator/README.md
+            cupcake/README.md
+            compatibility/README.md
+            docs/ARCHITECTURE.md
+            docs/COMPATIBILITY.md
+            docs/INSTALLATION.md
+          )
+
+          for file in "${files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "Missing file: $file"
+              exit 1
+            fi
+
+            echo "OK: $file"
+          done
+
+          echo "Repository structure validated!"
+
+      - name: Check workflow directory
+        shell: bash
+        run: |
+          test -d .github/workflows
+          echo "GitHub Actions directory exists."
