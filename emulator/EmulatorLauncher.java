@@ -122,10 +122,22 @@ public final class EmulatorLauncher {
         builder.directory(config.getDataDirectory());
 
         // Unificar saida normal e mensagens de erro.
-        builder.redirectErrorStream(true);
+        
 
         // Gravar a saida para evitar bloquear o processo.
-        builder.redirectOutput(logFile);
+        builder.redirectErrorStream(false);
+
+Process process = builder.start();
+
+EmulatorLogManager logManager =
+        new EmulatorLogManager(
+                new File(projectRoot, "emulator/logs")
+        );
+
+EmulatorLogManager.LogCapture capture =
+        logManager.startCapture(process);
+
+return process;
 
         try {
             return builder.start();
