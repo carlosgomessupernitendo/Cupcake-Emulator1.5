@@ -371,3 +371,21 @@ public class EmulatorLogManager {
         }
     }
 }
+File logsDirectory = new File(
+        projectRoot,
+        "emulator/logs"
+);
+
+File logFile = new File(
+        logsDirectory,
+        "all-20261121-120000-000.log"
+);
+
+BootAnalyzer analyzer =
+        new BootAnalyzer(logsDirectory);
+
+BootAnalyzer.AnalysisReport report =
+        analyzer.analyze(logFile);
+
+File reportFile =
+        analyzer.saveReport(report);
